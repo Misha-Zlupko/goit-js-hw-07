@@ -8,7 +8,8 @@ const galeryImg = ({ preview, original, description }) =>
 </a>`;
 const galleryEls = galleryItems.map(galeryImg).join("");
 galleryEl.insertAdjacentHTML("afterbegin", galleryEls);
-let gallery = new SimpleLightbox(".gallery a");
-gallery.on("show.simplelightbox", function () {
-  // do something…
+new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionPosition: "bottom",
+  captionDelay: 250,
 });
